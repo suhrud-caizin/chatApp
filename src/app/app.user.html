@@ -1,0 +1,25 @@
+
+    <div class="col-sm-5" >
+  
+      <input #phone placeholder="user name" class="form-control "  />
+  </div>
+  <br>
+  <!-- lots of other elements -->
+  
+  <!-- phone refers to the input element; pass its `value` to an event handler -->
+  <button type="button" class="btn btn-primary "  (click)="login(phone.value)">Join</button>
+  <div class="col-sm-5" >
+  
+    <input #channel placeholder="create a channel" class="form-control "  />
+  </div>
+  <br>
+  <!-- lots of other elements -->
+  
+  <!-- phone refers to the input element; pass its `value` to an event handler -->
+  <button type="button" class="btn btn-primary "  (click)="createChannel(channel.value)">create Channel</button>
+  <div *ngFor='let user of users' class="col">
+    <app-chat [userName]="user"></app-chat>
+    <hr>
+  </div>  
+  
+ 
