@@ -14,10 +14,7 @@ export class Channel{
     )
     export  class channelService {
         channelList:Channel[]=[{name:"#GENERAL",messegeList:[],userList:[]}];
-        // currentChannel:string='#GENERAL';
-        // setCurrentChannel(channel:string){
-        //             this.currentChannel=channel;
-        // }
+        
         getAll():string[]{
             let temp:string[]=[];
             this.channelList.forEach(elem=>temp.push(elem.name));
@@ -28,6 +25,7 @@ export class Channel{
         addChannel(c:Channel){
             // c.userList.push(user);
                 this.channelList.push(c);
+                
                 
                 
         }
@@ -50,7 +48,14 @@ export class Channel{
         addMessege(mc:MessegeComponent,cname:string){
                     this.channelList.find(elem=>elem.name==cname)?.messegeList.push(mc);
         }
-        leaveChannel(){}
+        leaveChannel(cname:string,uname:string){
+            
+        console.log(this.channelList);
+        let temp=this.channelList!.find(elem=>elem.name==cname);
+        temp!.userList=temp!.userList.filter(usr=>usr!=uname);
+        console.log(this.channelList);
+
+        }
     
     }
     

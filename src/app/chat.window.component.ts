@@ -34,6 +34,13 @@ userExistInChannel(){
     getAll(){
         return this.cs.getByChannelName(this.channelName);
     }
+    leaveChannel(){
+      this.cs.leaveChannel(this.channelName,this.userName);
+     
+    }
+    subscribe(){
+      this.cs.joinChannel(this.channelName,this.userName);
+    }
 
 
   }
