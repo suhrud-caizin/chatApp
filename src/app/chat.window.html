@@ -1,0 +1,68 @@
+<!-- <div class="col-sm-5">
+    <h1>
+
+        {{channelName}}
+    </h1>
+    <div class="card" style="width:40rem ;height:50rem;overflow-y: auto;" *ngIf="userExistInChannel()">
+        <TR *ngFor='let chat of getAll()' class="col">
+
+            <div class="card-body">
+
+                <div class="card text-black bg-light ">
+                    <b>
+
+                        {{chat.userName}}:
+                    </b>
+                    {{chat.messege}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{chat.timeStamp|date:'shortTime'}}
+                </div>
+
+            </div>
+
+        </TR>
+
+
+    </div>
+
+    <div style="width:40rem ;height:50rem;overflow-y: auto;" *ngIf="!userExistInChannel()">
+        <h1>please subscribe first!</h1>
+    </div>
+</div> -->
+<!-- -------------------------------------------- -->
+
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+
+                <div class="card" style="overflow-y:auto" id="chat2" *ngIf="userExistInChannel()">
+                    <div class="card-header d-flex justify-content-between align-items-center p-3" >
+                        <h5 class="mb-0">Chat</h5>
+                        <button type="button" class="btn btn-primary btn-sm"
+                            data-mdb-ripple-color="dark">MychatAPP</button>
+                    </div>
+                    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px" >
+
+                        <div class="d-flex flex-row justify-content-start"  >
+                          
+                            <div style="overflow-y:auto" >
+                               
+                    <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;" *ngFor='let chat of getAll()' > <b>
+
+                        {{chat.userName}}:
+                    </b> {{chat.messege}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{chat.timeStamp|date:'shortTime'}}</p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div style="width:40rem ;height:50rem;overflow-y: auto;" *ngIf="!userExistInChannel()">
+    <h1>Join first!</h1>
+</div> -->

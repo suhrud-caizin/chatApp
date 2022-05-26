@@ -8,16 +8,16 @@ export class Channel{
     userList:string[]=[];
 }
 @Injectable(
-//     {
-//     providedIn:'root'
-// }
+    {
+    providedIn:'root'
+}
     )
     export  class channelService {
         channelList:Channel[]=[{name:"#GENERAL",messegeList:[],userList:[]}];
-        currentChannel:string='#GENERAL';
-        setCurrentChannel(channel:string){
-                    this.currentChannel=channel;
-        }
+        // currentChannel:string='#GENERAL';
+        // setCurrentChannel(channel:string){
+        //             this.currentChannel=channel;
+        // }
         getAll():string[]{
             let temp:string[]=[];
             this.channelList.forEach(elem=>temp.push(elem.name));
@@ -30,6 +30,9 @@ export class Channel{
                 this.channelList.push(c);
                 
                 
+        }
+        getUsersByChannel(cname:string){
+  return this.channelList.find(elem=>elem.name==cname)!.userList;
         }
         joinChannel(cname:string,user:string){
             this.channelList.find(elem=>elem.name==cname)?.userList.push(user);
@@ -47,6 +50,7 @@ export class Channel{
         addMessege(mc:MessegeComponent,cname:string){
                     this.channelList.find(elem=>elem.name==cname)?.messegeList.push(mc);
         }
+        leaveChannel(){}
     
     }
     

@@ -1,55 +1,21 @@
-
 <div class="row">
-    <!-- <div> -->
-        <nav class="navbar navbar-expand-lg bg-light" style="overflow-x:auto ;width: 100rem;">
-            <div class="container-fluid">
-              
-                <tr class="nav-item" *ngFor='let chan of getChannels()'> 
-                    <!-- <a class="nav-link active" aria-current="page" href="#">{{chan}}</a> -->
-                 <button type="button"   class="btn btn-light "  (click)="setChannelName(chan)">{{chan}}</button>
-                   
-                  </tr>
-      
-              </div>
-            </nav>
+
+    <app-channel (open)="setChannelName($event)"></app-channel>
 
 
-            <!-- <tr class="nav-item" *ngFor='let chan of getChannels()'>  -->
-              <!-- <a class="nav-link active" aria-current="page" href="#">{{chan}}</a> -->
-           <!-- <button type="button"   class="btn btn-light col-sm-5"  (click)="setChannelName(chan)">{{chan}}</button> -->
-             
-            <!-- </tr> -->
 
-   
-
-<div class="col-sm-5">
-    <ng-content></ng-content>
-</div>
-
-
-    <div class="col-sm-5">
-<h1>
-
-    {{channelName}}
-</h1>
-        <div class="card"  style="width:40rem ;height:50rem;overflow-y: auto;">
-            <TR *ngFor='let chat of getAll()' class="col">
-                
-                <div class="card-body" >
-                    
-                    <div class="card text-black bg-light " >
-                        <b>
-
-                            {{chat.userName}}:
-                        </b>
-                        {{chat.messege}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{chat.timeStamp|date:'shortTime'}}
-                    </div>
-                    
-                </div>
-                
-                </TR>
-
-
-        </div>
-</div>
+<!-- 
+    <div class="col-sm-5"> -->
+        <app-user [channelName]="channelName"  (uname)="setUserName($event)"></app-user>
+    <!-- </div> -->
+        
+    
+    
+    <div class="container-fluid">
+        <app-chatwin [userName]="userName" [channelName]="channelName"></app-chatwin>
+    </div>
+    <!-- <div class="col-sm-5"> -->
+        
+<app-chat [userName]="userName" [channelName]="channelName"></app-chat>
+<!-- </div> -->
 </div>

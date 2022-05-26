@@ -1,47 +1,11 @@
-<!-- <input type="text" #random class="form-control" placeholder="username" *ngIf="!userName" >
-<button type="submit" class="btn btn-primary" *ngIf="!userName" (click)="login(#random.value)" >Join</button> -->
 
-    <div *ngIf="!userName">
-        
-        <div class="col-sm-5" >
+<DIV class="container-fluid">
 
-            <input #phone placeholder="user name" class="form-control "  />
-        </div>
-        <br>
-        <!-- lots of other elements -->
-        
-        <!-- phone refers to the input element; pass its `value` to an event handler -->
-        <button type="button" class="btn btn-primary "  (click)="login(phone.value)">Join</button>
+    <div *ngIf="userName" class="card-footer text-muted d-flex justify-content-start align-items-center p-3" style="align-items:center">
+        <i>{{userName}}~</i>
+    <input #msg type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+      placeholder="Type message">
+      <button type="button" class="btn btn-success" (click)="addMessege(msg.value)" *ngIf="isSubscribed()">send</button>
+      <button type="button" class="btn btn-success"  (click)="subscribe()" *ngIf="!isSubscribed()">subscibe</button>
     </div>
-    
-    <div class="row">
-<div class="col-sm-5">
-
-    
-    </div>
-
-
-<!-- <div class="col-sm-5"> -->
-
-
- 
-      
-         
-       
-
-
-<span *ngIf="userName" >
-        <i>{{userName}}</i>
-    <input #msg placeholder="enter a messege" class="form-control"   />
-    <br>
-    <!-- lots of other elements -->
-    
-    <!-- phone refers to the input element; pass its `value` to an event handler -->
-    <button type="button" class="btn btn-success"  (click)="addMessege(msg.value)" *ngIf="isSubscribed()">send</button>
-    <button type="button" class="btn btn-success"  (click)="subscribe()" *ngIf="!isSubscribed()">subscibe</button>
-</span>
-
-
-<!-- </div> -->
-</div>
-
+</DIV>

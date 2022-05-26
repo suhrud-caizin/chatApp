@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Channel, channelService } from './channel.service';
 import { chatService } from './chat.service';
 
@@ -9,19 +9,22 @@ import { chatService } from './chat.service';
 })
 export class UserComponent {
   title = '';
+  @Output() uname: EventEmitter<string> = new EventEmitter();
   constructor(private cs:channelService) {
   }
-  users:string[]=[];
+  // users:string[]=[];
+  user:string='';
+  @Input()channelName:string='';
   login(userName:string){
     console.log('inside login');
-    this.users.push(userName);
+    // this.users.push(userName);
+    this.user=userName;
     this.cs.channelList[0].userList.push(userName);
     console.log(this.cs.channelList[0].userList);
-    
+    this.uname.emit(userName);
 }
-createChannel(name:string){
-  let c:Channel=new Channel();
-  c.name=name;
-  this.cs.addChannel(c);
+getUsersByChannelName(){
+  return this.cs.getUsersByChannel(this.channelName);
 }
+
 }

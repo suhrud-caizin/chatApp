@@ -7,8 +7,9 @@ import { MessegeComponent } from "./messege.component";
 @Component({
     selector: 'app-disp',
     templateUrl: './app.disp.html',
-    styleUrls: ['./app.component.css'],
-    providers:[channelService]
+    styleUrls: ['./app.component.css']
+    // ,
+    // providers:[channelService]
     
   })
   export class DisplayComponent {
@@ -18,16 +19,24 @@ import { MessegeComponent } from "./messege.component";
   constructor(private cs:channelService) {
   }
   channelName:string='#GENERAL';
+  userName:string=''
   getAll(){
     return this.cs.getByChannelName(this.channelName);
   }
-  setChannelName(cname:string){
-        this.channelName=cname;
-        this.cs.currentChannel=cname;
+  setChannelName($event:any){
+  
+        this.channelName=$event;
+        // this.cs.currentChannel=$event;
         return this.cs.getByChannelName(this.channelName);
   }
   getChannels(){
       return this.cs.getAll();
+  }
+  setUserName($event:any){
+      this.userName=$event;
+  }
+  userExistInChannel(){
+    return this.cs.userExistInChannel(this.channelName,this.userName);
   }
    
 
