@@ -14,3 +14,11 @@
     height: 1px;
     background: #eee;
     }
+
+    .special{
+
+       text-align: right;
+        color: blueviolet;
+        align-items:flex-end
+        
+    }

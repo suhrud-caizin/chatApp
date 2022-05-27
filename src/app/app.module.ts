@@ -9,10 +9,11 @@ import { ChatComponent } from './chat.component';
 import { ChatWindowComponent } from './chat.window.component';
 import { DisplayComponent } from './display.component';
 import { UserComponent } from './user.component';
+import { CurrentuserDirective } from './currentuser.directive';
 
 @NgModule({
   declarations: [
-    AppComponent,ChatComponent,DisplayComponent,UserComponent,ChannelComponent,ChatWindowComponent
+    AppComponent,ChatComponent,DisplayComponent,UserComponent,ChannelComponent,ChatWindowComponent, CurrentuserDirective
   ],
   imports: [
     BrowserModule,

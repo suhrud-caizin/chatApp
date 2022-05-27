@@ -1,29 +1,34 @@
-
 <section style="background-color: #eee;">
     <div class="container py-5">
 
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-6">
 
-                <div class="card" style="overflow-y:auto" id="chat2" >
-                    <div class="card-header d-flex justify-content-between align-items-center p-3" >
+                <div class="card" style="overflow-y:auto" id="chat2">
+                    <div class="card-header d-flex justify-content-between align-items-center p-3">
                         <h5 class="mb-0">{{channelName}}</h5>
-                        <button type="button" class="btn btn-danger btn-sm" *ngIf="channelName!='#GENERAL'&& userExistInChannel()"
-                            data-mdb-ripple-color="dark" (click)="leaveChannel()"  >Leave Channel</button>
-                            <button type="button" class="btn btn-primary btn-sm" *ngIf="channelName!='#GENERAL'&& !userExistInChannel()"
-                            data-mdb-ripple-color="dark" (click)="subscribe()"  >subscribe</button>
-                  
-                        </div>
-                    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px" *ngIf="userExistInChannel()" >
+                        <button type="button" class="btn btn-danger btn-sm"
+                            *ngIf="channelName!='#GENERAL'&& userExistInChannel()" data-mdb-ripple-color="dark"
+                            (click)="leaveChannel()">Leave Channel</button>
+                        <button type="button" class="btn btn-primary btn-sm"
+                            *ngIf="channelName!='#GENERAL'&& !userExistInChannel()" data-mdb-ripple-color="dark"
+                            (click)="subscribe()">subscribe</button>
 
-                        <div class="d-flex flex-row justify-content-start"  >
-                          
-                            <div style="overflow-y:auto" >
-                               
-                    <p class="large p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;" *ngFor='let chat of getAll()' > <b>
+                    </div>
+                    <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px"
+                        *ngIf="userExistInChannel()">
 
-                        {{chat.userName}}:
-                    </b> {{chat.messege}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{chat.timeStamp|date:'shortTime'}}</p>
+                        <div *ngFor='let chat of getAll()'>
+
+                            <div style="overflow-y:auto">
+
+                                <p class="large p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;"
+                                [appCurrentuser]="chat.userName==userName">
+                                    {{chat.userName}}|{{chat.timeStamp|date:'shortTime'}}:
+                                    <b>
+                                        {{chat.messege}}
+                                    </b>
+                                </p>
 
 
                             </div>
@@ -34,4 +39,26 @@
             </div>
         </div>
     </div>
+
+
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- [ngClass]="chat.userName==userName ? 'special' : ''" -->
+
+<!-- [appCurrentuser]="chat.userName==userName" -->
+<!-- [ngClass]="chat.userName==userName ? 'special justify-content-end' : 'justify-content-end'" -->
+<!-- [appCurrentuser]="chat.userName==userName" -->
