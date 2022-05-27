@@ -27,11 +27,13 @@ import { MessegeComponent } from "./messege.component";
  
     addMessege(m:string,cname:string='#GENERAL'){
       this.msg.nativeElement.value = '';
+      if(m){
       let mc=new MessegeComponent();
       mc.messege=m;
       mc.timeStamp=new Date();
       mc.userName=this.userName; 
       this.cs.addMessege(mc,this.channelName);
+      }
 }
     isSubscribed(){
       if(this.channelName=='#GENERAL'){

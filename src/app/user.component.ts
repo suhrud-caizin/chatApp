@@ -29,5 +29,6 @@ getUsersByChannelName(){
 
 logout(){
   this.user='';
+  this.uname.emit('');
 }
 }

@@ -24,9 +24,11 @@ export class ChannelComponent {
     }
     createChannel(name:string){
       this.channel!.nativeElement.value=''
+      if(name){
         let c:Channel=new Channel();
         c.name=name;
         this.cs.addChannel(c);
+      }
       }
 
 }
