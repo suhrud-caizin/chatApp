@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Channel, channelService } from './channel.service';
 import { chatService } from './chat.service';
 
@@ -13,7 +13,7 @@ export class ChannelComponent {
      */
     constructor(private cs:channelService) {}
     @ViewChild('channel') channel: ElementRef | undefined;
-
+    @Input()userName:string='';
     @Output() open: EventEmitter<string> = new EventEmitter();
     getChannels(){
     return this.cs.getAll();

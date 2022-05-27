@@ -1,21 +1,13 @@
 <div class="row">
 
-    <app-channel (open)="setChannelName($event)"></app-channel>
+    <app-channel (open)="setChannelName($event)" [userName]="userName"></app-channel>
 
 
-
-<!-- 
-    <div class="col-sm-5"> -->
         <app-user [channelName]="channelName"  (uname)="setUserName($event)"></app-user>
-    <!-- </div> -->
-        
-    
-    
     <div class="container-fluid">
         <app-chatwin [userName]="userName" [channelName]="channelName"></app-chatwin>
     </div>
-    <!-- <div class="col-sm-5"> -->
-        
+
 <app-chat [userName]="userName" [channelName]="channelName"></app-chat>
-<!-- </div> -->
+
 </div>
