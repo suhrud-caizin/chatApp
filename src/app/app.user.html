@@ -17,21 +17,28 @@
 
 </div>
 <div *ngIf="user">
-  <i>
  
-Current Members:
-</i>
 
-<p>
-<tr *ngFor="let user of getUsersByChannelName()">
-  
-    @{{user}}
-  </tr>
-</p>
-<p>
-   <!-- <button type="button" class="btn btn-primary " (click)="user=''"  *ngIf="user">Logout</button> -->
-</p>
-</div>
+      <i>
+        
+        Current Members:
+      </i>
+      
+      <p>
+        <tr *ngFor="let user of getUsersByChannelName()">
+          
+          @{{user}}
+        </tr>
+      </p>
+    
+
+    <div class="col-sm-5" style="align-items:flex-end">
+
+      <p>
+        <button type="button" class="btn btn-danger btn-sm" (click)="logout()"  *ngIf="user">Logout of App</button>
+      </p>
+    </div>
+
 
 </div>
 

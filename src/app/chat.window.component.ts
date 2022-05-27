@@ -37,6 +37,7 @@ userExistInChannel(){
      
     }
     subscribe(){
+      if(this.userName)
       this.cs.joinChannel(this.channelName,this.userName);
     }
 

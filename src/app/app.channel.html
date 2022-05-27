@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light" style="overflow-x:auto ;width: 100rem;">
+<nav class="navbar navbar-expand-lg bg-light" style="overflow-x:auto ;width: 100rem;" *ngIf="userName">
     <div class="container-fluid">
       
         <tr class="nav-item" *ngFor='let chan of getChannels()'> 
@@ -13,7 +13,7 @@
               <input #channel placeholder="create a channel" class="form-control col-sm-4 "  />
             </div>
             <br>
-            <button  type="button" class="btn btn-primary col-sm-1"  *ngIf="userName" (click)="createChannel(channel.value)">create Channel</button>
+            <button  type="button" class="btn btn-primary col-sm-1"   (click)="createChannel(channel.value)">create Channel</button>
          
         
         
