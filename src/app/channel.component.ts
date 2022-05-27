@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { Channel, channelService } from './channel.service';
+import { Channel } from './channel';
+import {  channelService } from './channel.service';
 
 @Component({
   selector: 'app-channel',

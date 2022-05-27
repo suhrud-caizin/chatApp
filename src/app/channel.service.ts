@@ -1,21 +1,19 @@
 import { Injectable } from "@angular/core";
-import { throwIfEmpty } from "rxjs";
-import { ChatComponent } from "./chat.component";
+
+import { Channel } from "./channel";
+import { IChatService } from "./chat-service";
 import { MessegeComponent } from "./messege";
-export class Channel {
-    name: string = '';
-    messegeList: MessegeComponent[] = [];
-    userList: string[] = [];
-}
+
 @Injectable(
     {
         providedIn: 'root'
     }
 )
-export class channelService {
+export class channelService implements IChatService {
     channelList: Channel[] = [{ name: "#GENERAL", messegeList: [], userList: [] }];
 
     getAllChannelsName(): string[] {
+        
         let temp: string[] = [];
         this.channelList.forEach(elem => temp.push(elem.name));
         return temp;
@@ -58,3 +56,5 @@ export class channelService {
     }
 
 }
+
+

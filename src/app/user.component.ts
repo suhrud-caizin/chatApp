@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Channel, channelService } from './channel.service';
+import {  channelService } from './channel.service';
 
 
 @Component({
