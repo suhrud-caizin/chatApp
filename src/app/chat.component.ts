@@ -1,5 +1,5 @@
 import { CssSelector } from "@angular/compiler";
-import { Component, Input } from "@angular/core";
+import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { channelService } from "./channel.service";
 import { chatService } from "./chat.service";
 import { MessegeComponent } from "./messege.component";
@@ -18,13 +18,15 @@ import { MessegeComponent } from "./messege.component";
   }
     @Input()userName:string='';
     @Input()channelName:string='';
+    @ViewChild('msg')
+  msg!: ElementRef;
     login(userName:string){
             this.userName=userName;
             console.log(userName);
     }
  
     addMessege(m:string,cname:string='#GENERAL'){
-      
+      this.msg.nativeElement.value = '';
       let mc=new MessegeComponent();
       mc.messege=m;
       mc.timeStamp=new Date();

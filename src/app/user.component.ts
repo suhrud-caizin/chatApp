@@ -27,4 +27,7 @@ getUsersByChannelName(){
   return this.cs.getUsersByChannel(this.channelName);
 }
 
+logout(){
+  this.user='';
+}
 }
