@@ -1,8 +1,8 @@
 import { CssSelector } from "@angular/compiler";
 import { Component } from "@angular/core";
 import { channelService } from "./channel.service";
-import { chatService } from "./chat.service";
-import { MessegeComponent } from "./messege.component";
+
+import { MessegeComponent } from "./messege";
 
 @Component({
     selector: 'app-disp',
@@ -30,7 +30,7 @@ import { MessegeComponent } from "./messege.component";
         return this.cs.getByChannelName(this.channelName);
   }
   getChannels(){
-      return this.cs.getAll();
+      return this.cs.getAllChannelsName();
   }
   setUserName($event:any){
       this.userName=$event;

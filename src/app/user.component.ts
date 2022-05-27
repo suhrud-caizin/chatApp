@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Channel, channelService } from './channel.service';
-import { chatService } from './chat.service';
+
 
 @Component({
   selector: 'app-user',

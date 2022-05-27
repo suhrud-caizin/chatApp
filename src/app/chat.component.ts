@@ -1,8 +1,7 @@
 import { CssSelector } from "@angular/compiler";
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { channelService } from "./channel.service";
-import { chatService } from "./chat.service";
-import { MessegeComponent } from "./messege.component";
+import { MessegeComponent } from "./messege";
 
 @Component({
     selector: 'app-chat',

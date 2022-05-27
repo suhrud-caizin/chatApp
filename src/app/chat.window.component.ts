@@ -3,8 +3,6 @@
 import { CssSelector } from "@angular/compiler";
 import { Component, Input } from "@angular/core";
 import { channelService } from "./channel.service";
-import { chatService } from "./chat.service";
-import { MessegeComponent } from "./messege.component";
 
 @Component({
     selector: 'app-chatwin',

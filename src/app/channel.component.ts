@@ -1,6 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Channel, channelService } from './channel.service';
-import { chatService } from './chat.service';
 
 @Component({
   selector: 'app-channel',
@@ -16,7 +15,7 @@ export class ChannelComponent {
     @Input()userName:string='';
     @Output() open: EventEmitter<string> = new EventEmitter();
     getChannels(){
-    return this.cs.getAll();
+    return this.cs.getAllChannelsName();
     }
     setChannelName(chan:string){
         
